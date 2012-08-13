@@ -8266,7 +8266,7 @@ void Player::_ApplyWeaponDependentAuraCritMod(Item *item, WeaponAttackType attac
         default: return;
     }
 
-    if (!item->IsBroken()&&item->IsFitToSpellRequirements(aura->GetSpellProto()))
+    if (!item->IsBroken()&&item->IsFitToSpellRequirements(aura->GetSpellProto()) && CanUseAttackType(attackType))
         HandleBaseModValue(mod, FLAT_MOD, float (aura->GetAmount()), apply);
 }
 
